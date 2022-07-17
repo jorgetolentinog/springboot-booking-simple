@@ -25,7 +25,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:8080/bookings
+POST http://localhost:8080/bookings/search
 content-type: application/json
 
 {
