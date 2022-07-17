@@ -1,10 +1,12 @@
-package com.project.coffee.services.table;
+package com.project.coffee.repository.mock;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.project.coffee.entities.Table;
+
+import com.project.coffee.model.Table;
+import com.project.coffee.repository.TableRepository;
 
 @Service
-public class TableServiceMock implements TableService {
+public class TableRepositoryMock implements TableRepository {
 
     @Override
     public List<Table> findAll() {

@@ -1,4 +1,4 @@
-package com.project.coffee.controllers;
+package com.project.coffee.controller;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.coffee.entities.Table;
-import com.project.coffee.services.table.TableService;
+import com.project.coffee.model.Table;
+import com.project.coffee.repository.TableRepository;
 
 @RestController
 @RequestMapping("/tables")
 public class TableController {
     @Autowired
-    private TableService tableService;
+    private TableRepository tableService;
 
     @GetMapping("")
     public List<Table> list() {

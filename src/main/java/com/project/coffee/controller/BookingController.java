@@ -1,4 +1,4 @@
-package com.project.coffee.controllers;
+package com.project.coffee.controller;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.coffee.entities.Booking;
-import com.project.coffee.entities.BookingState;
-import com.project.coffee.services.booking.BookingService;
+import com.project.coffee.model.Booking;
+import com.project.coffee.model.BookingState;
+import com.project.coffee.repository.BookingRepository;
 
 @RestController
 @RequestMapping("/bookings")
@@ -22,7 +22,7 @@ public class BookingController {
     Logger logger = Logger.getLogger(BookingController.class.getName());
 
     @Autowired
-    private BookingService bookingService;
+    private BookingRepository bookingService;
     
     @GetMapping("")
     public List<Booking> list() {

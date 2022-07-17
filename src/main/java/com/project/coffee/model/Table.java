@@ -1,4 +1,4 @@
-package com.project.coffee.entities;
+package com.project.coffee.model;
 
 import lombok.Data;
 

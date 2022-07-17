@@ -1,15 +1,16 @@
-package com.project.coffee.services.booking;
+package com.project.coffee.repository.mock;
 
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.project.coffee.entities.Booking;
-import com.project.coffee.entities.BookingState;
+import com.project.coffee.model.Booking;
+import com.project.coffee.model.BookingState;
+import com.project.coffee.repository.BookingRepository;
 
 @Service
-public class BookingServiceMock implements BookingService {
+public class BookingRepositoryMock implements BookingRepository {
 
     @Override
     public Booking save(Booking booking) {

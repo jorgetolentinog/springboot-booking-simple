@@ -1,11 +1,12 @@
-package com.project.coffee.services.user;
+package com.project.coffee.repository.mock;
 
 import org.springframework.stereotype.Service;
 
-import com.project.coffee.entities.User;
+import com.project.coffee.model.User;
+import com.project.coffee.repository.UserRepository;
 
 @Service
-public class UserServiceMock implements UserService {
+public class UserRepositoryMock implements UserRepository {
 
     public User findUserById(Long id) {
         User user = new User();
