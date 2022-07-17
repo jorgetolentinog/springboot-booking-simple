@@ -11,13 +11,13 @@ import com.project.coffee.entities.Table;
 import com.project.coffee.services.table.TableService;
 
 @RestController
-@RequestMapping("/table")
+@RequestMapping("/tables")
 public class TableController {
     @Autowired
     private TableService tableService;
 
     @GetMapping("")
-    public List<Table> index() {
+    public List<Table> list() {
         return tableService.findAll();
     }
 }

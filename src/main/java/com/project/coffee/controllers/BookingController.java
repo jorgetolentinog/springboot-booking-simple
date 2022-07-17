@@ -17,17 +17,15 @@ import com.project.coffee.entities.BookingState;
 import com.project.coffee.services.booking.BookingService;
 
 @RestController
-@RequestMapping("/booking")
+@RequestMapping("/bookings")
 public class BookingController {
-
     Logger logger = Logger.getLogger(BookingController.class.getName());
-
 
     @Autowired
     private BookingService bookingService;
     
     @GetMapping("")
-    public List<Booking> index() {
+    public List<Booking> list() {
         return bookingService.findAllByUserId(1L);
     }
 
