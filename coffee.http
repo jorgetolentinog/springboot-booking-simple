@@ -46,5 +46,10 @@ content-type: application/json
 
 ###
 
+POST http://localhost:8080/bookings/1/confirm
+content-type: application/json
+
+###
+
 GET http://localhost:8080/tables
 content-type: application/json
