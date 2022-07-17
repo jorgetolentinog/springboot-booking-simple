@@ -13,8 +13,7 @@ public class UserRepositoryJpa implements UserRepository {
 
 	@Autowired
 	private UserRepositoryJpaHelper userRepositoryJpaHelper;
-	
-	
+
 	@Override
 	public User findUserById(Long id) {
 		return userRepositoryJpaHelper.findById(id).orElse(null);
@@ -23,6 +22,11 @@ public class UserRepositoryJpa implements UserRepository {
 	@Override
 	public User save(User user) {
 		return userRepositoryJpaHelper.save(user);
+	}
+
+	@Override
+	public User findByEmail(String email) {
+		return userRepositoryJpaHelper.findByEmail(email);
 	}
 
 }

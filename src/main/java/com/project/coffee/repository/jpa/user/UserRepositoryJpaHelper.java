@@ -6,4 +6,5 @@ import com.project.coffee.model.User;
 
 public interface UserRepositoryJpaHelper extends JpaRepository<User, Long> {
 
+    User findByEmail(String email);
 }
