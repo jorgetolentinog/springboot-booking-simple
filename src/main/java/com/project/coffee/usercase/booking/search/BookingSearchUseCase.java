@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.project.coffee.model.Booking;
 import com.project.coffee.repository.BookingRepository;
 
-
 @Service
 public class BookingSearchUseCase {
      
     @Autowired
     private BookingRepository bookingRepository;
-    
+
     @GetMapping("")
-    public List<Booking> search() {
-        return bookingRepository.findAllByUserId(1L);
+    public List<Booking> search(Long userId) {
+        return bookingRepository.findAllByUserId(userId);
     }
 }

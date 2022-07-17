@@ -28,4 +28,8 @@ public class BookingRepositoryJpa implements BookingRepository {
 		return bookingRepositoryJpaHelper.findById(id).orElse(null);
 	}
 
+	@Override
+	public List<Booking> findAll() {
+		return bookingRepositoryJpaHelper.findAll();
+	}
 }

@@ -13,10 +13,14 @@ public class BookingCancelUseCase {
     @Autowired
     private BookingRepository bookingService;
 
-    public void cancel(Long id) {
-        Booking booking = bookingService.findById(id);
+    public void cancel(Long userId, Long bookingId) {
+        Booking booking = bookingService.findById(bookingId);
         if (booking == null) {
             throw new Error("Booking not found");
+        }
+
+        if (!booking.getUserId().equals(userId)) {
+            throw new Error("You are not allowed to cancel this booking");
         }
 
         booking.setStateId(BookingState.CANCELLED);

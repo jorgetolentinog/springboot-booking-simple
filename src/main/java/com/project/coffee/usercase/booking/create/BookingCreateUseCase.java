@@ -14,9 +14,13 @@ public class BookingCreateUseCase {
     private BookingRepository bookingService;
 
     @PostMapping("")
-    public Booking create(Booking booking) {
-        booking.setUserId(9L);
+    public Booking create(Long userId, BookingCreateRequest request) {
+        Booking booking = new Booking();
+        booking.setUserId(userId);
         booking.setStateId(BookingState.PENDING);
+        booking.setTableId(request.getTableId());
+        booking.setDate(request.getDate());
+        booking.setGuests(request.getGuests());
 
         return bookingService.save(booking);
     }

@@ -35,7 +35,7 @@ public class UserRepositoryMock implements UserRepository {
         users.add(user2);
     }
 
-    public User findUserById(Long id) {
+    public User findById(Long id) {
         return users.stream()
                 .filter(user -> user.getId().equals(id))
                 .findFirst()

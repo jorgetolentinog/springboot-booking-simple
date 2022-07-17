@@ -19,7 +19,7 @@ public class UserInfoUseCase {
 
     public UserinfoResponse userinfo(String token) {
         TokenPayload tokenPayload = tokenService.decode(token);
-        User user = userRepository.findUserById(tokenPayload.getUserId());
+        User user = userRepository.findById(tokenPayload.getUserId());
 
         UserinfoResponse response = new UserinfoResponse();
         response.setId(user.getId());

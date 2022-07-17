@@ -55,4 +55,17 @@ public class BookingRepositoryMock implements BookingRepository {
         booking.setStateId(BookingState.PENDING);
         return booking;
     }
+
+    @Override
+    public List<Booking> findAll() {
+        Booking booking = new Booking();
+        booking.setId(1L);
+        booking.setTableId(1L);
+        booking.setUserId(1L);
+        booking.setDate(new Date());
+        booking.setGuests(2);
+        booking.setStateId(BookingState.PENDING);
+
+        return List.of(booking);
+    }
 }

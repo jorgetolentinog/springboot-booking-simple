@@ -11,7 +11,7 @@ public class UserRepositoryJpa implements UserRepository {
 	private UserRepositoryJpaHelper userRepositoryJpaHelper;
 
 	@Override
-	public User findUserById(Long id) {
+	public User findById(Long id) {
 		return userRepositoryJpaHelper.findById(id).orElse(null);
 	}
 

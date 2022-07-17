@@ -8,4 +8,5 @@ public interface BookingRepository {
     public Booking save(Booking booking);
     public List<Booking> findAllByUserId(Long userId);
     public Booking findById(Long id);
+    public List<Booking> findAll();
 }
