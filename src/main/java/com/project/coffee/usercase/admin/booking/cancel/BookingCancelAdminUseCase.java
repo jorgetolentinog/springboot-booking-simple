@@ -18,8 +18,8 @@ public class BookingCancelAdminUseCase {
     @Autowired
     private BookingRepository bookingService;
 
-    public void cancel(Long userId, Long id) {
-        User user = userRepository.findById(id);
+    public void cancel(Long userId, Long bookingId) {
+        User user = userRepository.findById(userId);
         if (user == null) {
             throw new Error("User not found");
         }
@@ -28,7 +28,7 @@ public class BookingCancelAdminUseCase {
             throw new Error("You are not allowed to cancel this booking");
         }
 
-        Booking booking = bookingService.findById(id);
+        Booking booking = bookingService.findById(bookingId);
         if (booking == null) {
             throw new Error("Booking not found");
         }

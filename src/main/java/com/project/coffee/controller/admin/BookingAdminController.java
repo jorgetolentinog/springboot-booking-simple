@@ -1,12 +1,16 @@
 package com.project.coffee.controller.admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.coffee.model.Booking;
 import com.project.coffee.service.token.TokenService;
 import com.project.coffee.usercase.admin.booking.cancel.BookingCancelAdminUseCase;
 import com.project.coffee.usercase.admin.booking.confirm.BookingConfirmAdminUseCase;
@@ -28,10 +32,10 @@ public class BookingAdminController {
     @Autowired
     private BookingCancelAdminUseCase bookingCancelAdminUseCase;
 
-    @PostMapping("")
-    public void search(@RequestHeader("authorization") String token) {
+    @GetMapping("")
+    public List<Booking> search(@RequestHeader("authorization") String token) {
         Long userId = tokenService.decode(token).getUserId();
-        bookingSearchAdminUseCase.search(userId);
+        return bookingSearchAdminUseCase.search(userId);
     }
 
     @PostMapping("/{bookingId}/confirm")

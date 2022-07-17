@@ -17,7 +17,7 @@ public class UserRepositoryMock implements UserRepository {
 
     public UserRepositoryMock() {
         User user = new User();
-        user.setId(1000L);
+        user.setId(1L);
         user.setName("John");
         user.setLastname("Doe");
         user.setAddress("123 Main St");
@@ -26,12 +26,13 @@ public class UserRepositoryMock implements UserRepository {
         users.add(user);
 
         User user2 = new User();
-        user2.setId(2000L);
+        user2.setId(2L);
         user2.setName("Jorge");
         user2.setLastname("Armando");
         user2.setAddress("123 Main St");
         user2.setEmail("jorge@armando.com");
         user2.setPassword("5678");
+        user2.setIsAdmin(true);
         users.add(user2);
     }
 

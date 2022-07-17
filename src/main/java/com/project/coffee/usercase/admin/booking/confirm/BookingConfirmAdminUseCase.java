@@ -18,8 +18,8 @@ public class BookingConfirmAdminUseCase {
     @Autowired
     private BookingRepository bookingService;
 
-    public void confirm(Long userId, Long id) {
-        User user = userRepository.findById(id);
+    public void confirm(Long userId, Long bookingId) {
+        User user = userRepository.findById(userId);
         if (user == null) {
             throw new Error("User not found");
         }
@@ -28,7 +28,7 @@ public class BookingConfirmAdminUseCase {
             throw new Error("You are not allowed to confirm this booking");
         }
 
-        Booking booking = bookingService.findById(id);
+        Booking booking = bookingService.findById(bookingId);
         if (booking == null) {
             throw new Error("Booking not found");
         }
