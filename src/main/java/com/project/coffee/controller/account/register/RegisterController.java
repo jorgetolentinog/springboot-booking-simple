@@ -14,7 +14,7 @@ import com.project.coffee.repository.UserRepository;
 public class RegisterController {
 
     @Autowired
-    private UserRepository userService;
+    private UserRepository userRepository;
 
     @PostMapping("/register")
     public void register(@RequestBody RegisterRequest request) {
@@ -24,7 +24,8 @@ public class RegisterController {
         user.setLastname(request.getLastname());
         user.setAddress(request.getAddress());
         user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
 
-        userService.save(user);
+        userRepository.save(user);
     }
 }

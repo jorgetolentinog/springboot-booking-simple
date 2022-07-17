@@ -1,14 +1,10 @@
 package com.project.coffee.repository.jpa.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
 
 import com.project.coffee.model.User;
 import com.project.coffee.repository.UserRepository;
 
-@Service
-@Primary
 public class UserRepositoryJpa implements UserRepository {
 
 	@Autowired

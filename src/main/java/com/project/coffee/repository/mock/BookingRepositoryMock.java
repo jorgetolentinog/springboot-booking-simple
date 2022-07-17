@@ -3,6 +3,7 @@ package com.project.coffee.repository.mock;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.project.coffee.model.Booking;
@@ -10,6 +11,7 @@ import com.project.coffee.model.BookingState;
 import com.project.coffee.repository.BookingRepository;
 
 @Service
+@Primary
 public class BookingRepositoryMock implements BookingRepository {
 
     @Override
