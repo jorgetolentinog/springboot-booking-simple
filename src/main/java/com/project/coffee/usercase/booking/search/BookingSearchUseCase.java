@@ -1,19 +1,18 @@
-package com.project.coffee.controller.bookings.search;
+package com.project.coffee.usercase.booking.search;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.project.coffee.model.Booking;
 import com.project.coffee.repository.BookingRepository;
 
-@RestController
-@RequestMapping("/bookings")
-public class BookingSearchController {
-    
+
+@Service
+public class BookingSearchUseCase {
+     
     @Autowired
     private BookingRepository bookingRepository;
     

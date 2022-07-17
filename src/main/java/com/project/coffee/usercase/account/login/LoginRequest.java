@@ -1,4 +1,4 @@
-package com.project.coffee.controller.account.login;
+package com.project.coffee.usercase.account.login;
 
 import lombok.Data;
 

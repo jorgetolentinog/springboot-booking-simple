@@ -1,32 +1,22 @@
-package com.project.coffee.controller.account.login;
-
-
-import java.util.logging.Logger;
+package com.project.coffee.usercase.account.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-import com.project.coffee.service.token.TokenPayload;
 import com.project.coffee.model.User;
 import com.project.coffee.repository.UserRepository;
+import com.project.coffee.service.token.TokenPayload;
 import com.project.coffee.service.token.TokenService;
 
-@RestController
-@RequestMapping("/account")
-public class LoginController {
-    Logger logger = Logger.getLogger(LoginController.class.getName());
-
+@Service
+public class LoginUseCase {
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private TokenService tokenService;
 
-    @PostMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest request) {
+    public LoginResponse login(LoginRequest request) {
         User user = userRepository.findByEmail(request.getEmail());
 
         if (user == null) {
@@ -47,5 +37,4 @@ public class LoginController {
 
         return response;
     }
-
 }

@@ -1,24 +1,19 @@
-package com.project.coffee.controller.bookings.confirm;
+package com.project.coffee.usercase.admin.booking.confirm;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.project.coffee.model.Booking;
 import com.project.coffee.model.BookingState;
 import com.project.coffee.repository.BookingRepository;
 
-@RestController
-@RequestMapping("/bookings")
-public class BookingConfirmController {
-    
+@Service
+public class BookingConfirmUseCase {
+     
     @Autowired
     private BookingRepository bookingService;
 
-    @PostMapping("/{id}/confirm")
-    public void confirm(@PathVariable Long id) {
+    public void confirm(Long id) {
         Booking booking = bookingService.findById(id);
         if (booking == null) {
             throw new Error("Booking not found");

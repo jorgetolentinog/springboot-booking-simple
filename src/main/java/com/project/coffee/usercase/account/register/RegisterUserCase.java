@@ -1,31 +1,24 @@
-package com.project.coffee.controller.account.register;
+package com.project.coffee.usercase.account.register;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.project.coffee.model.User;
 import com.project.coffee.repository.UserRepository;
 
-@RestController
-@RequestMapping("/account")
-public class RegisterController {
-
+@Service
+public class RegisterUserCase {
+    
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/register")
-    public void register(@RequestBody RegisterRequest request) {
-
+    public void register(RegisterRequest request) {
         User user = new User();
         user.setName(request.getName());
         user.setLastname(request.getLastname());
         user.setAddress(request.getAddress());
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
-
         userRepository.save(user);
     }
 }

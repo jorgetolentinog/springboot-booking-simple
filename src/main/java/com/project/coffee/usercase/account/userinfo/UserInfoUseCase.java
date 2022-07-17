@@ -1,19 +1,15 @@
-package com.project.coffee.controller.account.userinfo;
+package com.project.coffee.usercase.account.userinfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.project.coffee.model.User;
 import com.project.coffee.repository.UserRepository;
 import com.project.coffee.service.token.TokenPayload;
 import com.project.coffee.service.token.TokenService;
 
-@RestController
-@RequestMapping("/account")
-public class UserinfoController {
+@Service
+public class UserInfoUseCase {
     
     @Autowired
     private UserRepository userRepository;
@@ -21,8 +17,7 @@ public class UserinfoController {
     @Autowired
     private TokenService tokenService;
 
-    @GetMapping("/userinfo")
-    public UserinfoResponse userinfo(@RequestHeader("authorization") String token) {
+    public UserinfoResponse userinfo(String token) {
         TokenPayload tokenPayload = tokenService.decode(token);
         User user = userRepository.findUserById(tokenPayload.getUserId());
 
