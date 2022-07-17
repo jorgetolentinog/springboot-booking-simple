@@ -1,0 +1,50 @@
+POST http://localhost:8080/auth
+content-type: application/json
+
+{
+    "email": "",
+    "password": "asd"
+}
+
+###
+
+GET http://localhost:8080/auth/userinfo
+content-type: application/json
+
+###
+
+POST http://localhost:8080/account
+content-type: application/json
+
+{
+    "name": "name",
+    "lastname": "asd",
+    "address": "asd",
+    "email": "asd"
+}
+
+###
+
+GET http://localhost:8080/table
+content-type: application/json
+
+###
+
+POST http://localhost:8080/booking
+content-type: application/json
+
+{
+    "tableId": 2,
+    "date": "2022-07-16T23:39:22Z",
+    "guests": 4
+}
+
+###
+
+GET http://localhost:8080/booking
+content-type: application/json
+
+###
+
+POST http://localhost:8080/booking/1/cancel
+content-type: application/json
