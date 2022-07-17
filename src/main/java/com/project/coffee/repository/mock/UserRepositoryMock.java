@@ -24,4 +24,17 @@ public class UserRepositoryMock implements UserRepository {
         user.setId(1000L);
         return user;
     }
+
+    @Override
+    public User findByEmail(String email) {
+        User user = new User();
+        user.setId(1000L);
+        user.setName("John");
+        user.setLastname("Doe");
+        user.setAddress("123 Main St");
+        user.setEmail("john@doe.com");
+        user.setPassword("1234");
+
+        return user;
+    }
 }
