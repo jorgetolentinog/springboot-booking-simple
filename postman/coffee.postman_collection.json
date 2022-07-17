@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"john@doe.com\",\n    \"password\": \"1234\"\n}",
+							"raw": "{\n    \"email\": \"jorge@tolentino.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 						"header": [
 							{
 								"key": "authorization",
-								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjUwMDB9.Q-JzhOJ6zG7U5K9wX__NPgfY79A0Oc6h3OzIoiXx-fI",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2NTgwNzM0OTgzNjJ9.xn3ut8TcOph208igCH9fEgbo_DcuBa4aM8Fmehz_sNI",
 								"type": "text"
 							}
 						],
@@ -71,7 +71,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"name\",\n    \"lastname\": \"asd\",\n    \"address\": \"asd\",\n    \"email\": \"asd\"\n}",
+							"raw": "{\n    \"name\": \"jorge\",\n    \"lastname\": \"tolentino\",\n    \"address\": \"asdsad\",\n    \"email\": \"jorge@tolentino.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
