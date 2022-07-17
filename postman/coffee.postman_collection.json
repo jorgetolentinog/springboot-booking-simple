@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"jorge@tolentino.com\",\n    \"password\": \"1234\"\n}",
+							"raw": "{\n    \"email\": \"john@doe.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 						"header": [
 							{
 								"key": "authorization",
-								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjE2NTgwNzM0OTgzNjJ9.xn3ut8TcOph208igCH9fEgbo_DcuBa4aM8Fmehz_sNI",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjJ9.ejEbhVjgz4J7d_s9F1XF2sbFT1fXkipz9ha2RHRLzNw",
 								"type": "text"
 							}
 						],
@@ -102,7 +102,13 @@
 					"name": "New booking",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEwMDB9.-NvjROPOo4G20WsiWsAh8dRjxq2KOB8CF6RWkRl9QZk",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"tableId\": 2,\n    \"date\": \"2022-07-16T23:39:22Z\",\n    \"guests\": 4\n}",
@@ -127,10 +133,16 @@
 					"response": []
 				},
 				{
-					"name": "All bookings",
+					"name": "My bookings",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjF9.SIR6HAE74JcH3OP9vLq31UFWLSC-XRJL92Xq07-7FZs",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/bookings",
 							"protocol": "http",
@@ -146,10 +158,16 @@
 					"response": []
 				},
 				{
-					"name": "Cancel booking",
+					"name": "Cancel my booking",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjF9.SIR6HAE74JcH3OP9vLq31UFWLSC-XRJL92Xq07-7FZs",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/bookings/1/cancel",
 							"protocol": "http",
@@ -161,27 +179,6 @@
 								"bookings",
 								"1",
 								"cancel"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Confirm booking",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/bookings/1/confirm",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"bookings",
-								"1",
-								"confirm"
 							]
 						}
 					},
@@ -210,6 +207,98 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "booking",
+					"item": [
+						{
+							"name": "All bookings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjF9.SIR6HAE74JcH3OP9vLq31UFWLSC-XRJL92Xq07-7FZs",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/admin/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm booking",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjJ9.ejEbhVjgz4J7d_s9F1XF2sbFT1fXkipz9ha2RHRLzNw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/admin/bookings/1/confirm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"bookings",
+										"1",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel booking",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjJ9.ejEbhVjgz4J7d_s9F1XF2sbFT1fXkipz9ha2RHRLzNw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/admin/bookings/1/cancel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"bookings",
+										"1",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
