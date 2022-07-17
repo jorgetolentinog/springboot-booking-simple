@@ -1,26 +1,19 @@
-package com.project.coffee.controller;
+package com.project.coffee.controller.account.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.coffee.model.User;
-import com.project.coffee.payload.LoginRequest;
-import com.project.coffee.payload.LoginResponse;
-import com.project.coffee.repository.UserRepository;
 import com.project.coffee.service.AuthService;
 import com.project.coffee.service.TokenService;
 
 @RestController
 @RequestMapping("/account")
-public class AccountController {
-
-    @Autowired
-    private UserRepository userService;
-
+public class LoginController {
+    
     @Autowired
     private AuthService authService;
 
@@ -41,19 +34,4 @@ public class AccountController {
         return response;
     }
 
-    @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        return userService.save(user);
-    }
-
-    @GetMapping("/userinfo")
-    public User userinfo() {
-        Boolean isTokenValid = tokenService.isValid("token");
-        if (!isTokenValid) {
-            throw new Error("Token is invalid");
-        }
-
-        User user = new User();
-        return user;
-    }
 }
